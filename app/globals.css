@@ -99,7 +99,7 @@
     }
 
     body {
-        @apply bg-current text-foreground;
+        @apply bg-current text-black;
     }
 }
 
