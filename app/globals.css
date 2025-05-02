@@ -103,9 +103,9 @@
     }
 }
 
-.skeleton {
+.skeleton\!{
     * {
-        pointer-events: none !important;
+        pointer-events: none;
     }
 
     *[class^="text-"] {
@@ -146,12 +146,12 @@
 }
 
 .cm-activeLine,
-.cm-activeLineGutter {
-    @apply bg-transparent !important;
+.cm-activeLineGutter\!{
+    @apply bg-transparent;
 }
 
-.cm-activeLine {
-    @apply rounded-r-sm !important;
+.cm-activeLine\!  {
+    @apply rounded-r-sm;
 }
 
 .cm-lineNumbers {
@@ -162,8 +162,8 @@
     @apply min-w-3;
 }
 
-.cm-lineNumbers .cm-activeLineGutter {
-    @apply rounded-l-sm !important;
+.cm-lineNumbers .cm-activeLineGutter\! {
+    @apply rounded-l-sm;
 }
 
 .suggestion-highlight {
