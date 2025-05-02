@@ -95,7 +95,7 @@
 
 @layer base {
     * {
-        @apply border-border;
+        @apply border-solid;
     }
 
     body {
@@ -128,13 +128,21 @@
 
 .cm-editor,
 .cm-gutters {
-    @apply bg-background dark:bg-zinc-800 outline-none selection:bg-zinc-900 !important;
+    background-color: currentColor;
+    color-scheme: dark;
+    background-color: #27272a; /* dark:bg-zinc-800 */
+    outline: none;
+    ::selection {
+        background-color: #18181b; /* selection:bg-zinc-900 */
+    }
 }
 
 .ͼo.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground,
 .ͼo.cm-selectionBackground,
 .ͼo.cm-content::selection {
-    @apply bg-zinc-200 dark:bg-zinc-900 !important;
+    background-color: #e4e4e7; /* bg-zinc-200 */
+    color-scheme: dark;
+    background-color: #18181b; /* dark:bg-zinc-900 */
 }
 
 .cm-activeLine,
