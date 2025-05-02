@@ -21,6 +21,11 @@
     }
 }
 
+@theme {
+    --bg-background: 0 0% 98%;
+    --bg-foreground: 240 10% 3.9%;
+}
+
 @layer base {
     :root {
         --background: 0 0% 100%;
@@ -99,7 +104,19 @@
     }
 
     body {
-        @apply bg-current text-black;
+        @apply bg-inherit text-white;
+    }
+
+
+    .new-background {
+        background-color: var(--bg-background);
+    }
+
+    .new-foreground {
+        color: var(--bg-foreground);
+    }
+    .new-card {
+        background-color: var(--bg-card);
     }
 }
 
