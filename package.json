@@ -42,6 +42,7 @@
     "@vercel/blob": "^1.0.1",
     "@vercel/functions": "^2.0.1",
     "@vercel/postgres": "^0.10.0",
+    "@vercel/speed-insights": "^1.2.0",
     "ai": "4.3.13",
     "bcrypt-ts": "^7.0.0",
     "class-variance-authority": "^0.7.1",

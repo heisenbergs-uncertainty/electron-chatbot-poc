@@ -2,6 +2,7 @@ import { Toaster } from 'sonner';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import './globals.css';
 import { SessionProvider } from 'next-auth/react';
@@ -54,6 +55,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <html
       lang="en"
       // `next-themes` injects an extra classname to the body element to avoid
@@ -64,6 +66,7 @@ export default async function RootLayout({
       className={`${geist.variable} ${geistMono.variable}`}
     >
       <head>
+        <SpeedInsights/>   
         <script
           dangerouslySetInnerHTML={{
             __html: THEME_COLOR_SCRIPT,
