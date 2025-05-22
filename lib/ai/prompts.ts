@@ -66,6 +66,34 @@ export const systemPrompt = ({
   }
 };
 
+/**
+ * Generates a system prompt enhanced with RAG context
+ * This version of the system prompt is asynchronous as it retrieves context from the RAG system
+ */
+export const systemPromptWithRAG = async ({
+  selectedChatModel,
+  requestHints,
+  messages,
+}: {
+  selectedChatModel: string;
+  requestHints: RequestHints;
+  messages: Array<any>; // Using any to avoid circular dependencies
+}) => {
+  // First get the base system prompt
+  const basePrompt = systemPrompt({ selectedChatModel, requestHints });
+
+  // Import here to avoid circular dependencies
+  const { enhancePromptWithRAG } = await import('../rag/prompt-engineering');
+
+  // Enhance the base prompt with RAG context
+  return enhancePromptWithRAG(
+    basePrompt,
+    messages,
+    requestHints,
+    selectedChatModel,
+  );
+};
+
 export const codePrompt = `
 You are a Python code generator that creates self-contained, executable code snippets. When writing code:
 
